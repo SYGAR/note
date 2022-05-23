@@ -37,3 +37,6 @@ git add .
 ### 移除对应的文件
 git reset HEAD 要移除的文件名称
 git reset HEAD .移除所有
+
+### 跳过暂存区 直接提交到仓库
+git commit -a -m "..."
