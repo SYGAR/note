@@ -28,4 +28,5 @@ git add index.html
 git commit
 git commit -m "新建了index.html文件"
 
-111
+### 撤销文件的修改
+git checkout --index.html
