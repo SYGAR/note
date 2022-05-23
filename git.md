@@ -52,3 +52,9 @@ git branch 分支名称
 
 ### 切换分支
 git checkout 分支名称
+
+### 分支快速创建和切换
+-b 表示创建一个新分支
+checkout 表示切换到刚刚新建的分支上
+git checkout -b 分支名称
+
