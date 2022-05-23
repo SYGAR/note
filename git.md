@@ -30,3 +30,10 @@ git commit -m "新建了index.html文件"
 
 ### 撤销文件的修改
 git checkout --index.html
+
+### 一次性将所有的新增和修改过的文件加入暂存区
+git add .
+
+### 移除对应的文件
+git reset HEAD 要移除的文件名称
+git reset HEAD .移除所有
