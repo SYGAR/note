@@ -1,6 +1,6 @@
 ### 配置用户信息
- git config --global user.name "yemengxia"
- git config --global user.email "2404701479@qq.com"
+ git config --global user.name ""
+ git config --global user.email ""
 
 ### 查看所有的全局配置项
 git config --list --global
@@ -40,3 +40,15 @@ git reset HEAD .移除所有
 
 ### 跳过暂存区 直接提交到仓库
 git commit -a -m "..."
+
+### 将远程仓库克隆到本地
+git clone 远程仓库的地址
+
+### 查看分支列表
+git branch
+
+### 创建新分支
+git branch 分支名称
+
+### 切换分支
+git checkout 分支名称
