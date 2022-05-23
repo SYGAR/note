@@ -58,3 +58,4 @@ git checkout 分支名称
 checkout 表示切换到刚刚新建的分支上
 git checkout -b 分支名称
 
+### 合并分支
