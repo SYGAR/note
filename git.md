@@ -63,3 +63,33 @@ git merge 分支名称
 
 ### 删除分支
 git branch -d 分支名称
+
+### 分支合并冲突
+打开包含冲突的文件，手动解决冲突之后，再执行如下的命令
+git add .
+git commit -m ""
+
+### 把本地分支推送到远程仓库
+-u表示把本地分支和远程分支进行关联，只有第一次推送的时候需要带 -u 参数
+git push -u 远程仓库的别名 本地分支名称：远程分支名称 
+例子： git push -u origin payment:pay
+
+如果希望远程分支的名称和本地分支名称保持一致，可以对命令进行简化：git push -u origin payment
+
+### 查看远程仓库的所有分支列表的信息
+git remote show 远程仓库名称
+
+### 从远程仓库中，把对应的远程分支下载到本地仓库，保持本地分支和远程分支名称相同
+git checkout 远程分支的名称
+例子：git checkout pay
+
+### 从远程仓库中，把对应的远程分支下载到本地仓库，并把下载的本地分支进行重命名
+git checkout -b 本地分支名称 远程仓库名称/远程分支名称
+例子：git checkout -b payment origin/pay
+
+### 从远程仓库，拉取当前分支最新的代码，保持当前分支的代码和远程分支代码一致
+git pull
+
+### 删除远程仓库中，指定名称的远程分支
+git push 远程仓库名称 --delete 远程分支名称
+例子：git push origin --delete pay
