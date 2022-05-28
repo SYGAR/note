@@ -28,3 +28,5 @@ window.getSelection ? window.getSelection().removeAllRanges() : document.selecti
 1.对象字面量
 2.new Object()
 3.自定义构造函数
+
+### 构造函数创建对象
