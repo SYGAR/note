@@ -72,3 +72,4 @@ new在执行时会做四件事情：
 __proto__对象原型和原型对象prototype是等价的
 方法的查找规则: 首先先看ldh 对象身上是否有 sing 方法,如果有就执行这个对象上的sing
 如果么有sing 这个方法,因为有__proto__ 的存在,就去构造函数原型对象prototype身上去查找sing这个方法
+![prototype](images/prototype.png)
