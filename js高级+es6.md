@@ -30,3 +30,19 @@ window.getSelection ? window.getSelection().removeAllRanges() : document.selecti
 3.自定义构造函数
 
 ### 构造函数创建对象
+```
+ function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+            this.sing = function() {
+                console.log('我会唱歌');
+
+            }
+        }
+
+        var ldh = new Star('刘德华', 18);
+        var zxy = new Star('张学友', 19);
+        console.log(ldh);
+        ldh.sing();
+        zxy.sing();
+```
