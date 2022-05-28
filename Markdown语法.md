@@ -85,3 +85,6 @@ This is a footnote.[^1]
 ### 11.其他
 MarkDown中可以嵌套HTML元素
 <div align="center">居中</div>
+
+### 12.高亮
+I need to highlight these <mark>very important words</mark>.
