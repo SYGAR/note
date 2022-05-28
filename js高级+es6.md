@@ -30,7 +30,7 @@ window.getSelection ? window.getSelection().removeAllRanges() : document.selecti
 3.自定义构造函数
 
 ### 构造函数创建对象
-```
+```javascript
  function Star(uname, age) {
             this.uname = uname;
             this.age = age;
@@ -46,3 +46,22 @@ window.getSelection ? window.getSelection().removeAllRanges() : document.selecti
         ldh.sing();
         zxy.sing();
 ```
+构造函数是一种特殊的函数，主要用来初始化对象，即为对象成员变量赋初始值，它总与new一起使用。我们可以把对象中一些公共的属性和方法抽取出来，然后封装到这个函数里面。
+在JS中，使用构造函数时要注意以下两点：
+1.构造函数用于创建某一类对象，其首字母要大写
+2.构造函数要<mark>和new一起使用</mark>才有意义
+
+new在执行时会做四件事情：
+① 在内存中创建一个新的空对象
+② 让this指向这个新对象
+③ 执行构造函数里面的代码，给这个新对象添加属性和方法
+④ 返回这个新对象（所以构造函数里面不需要return）
+
+### 实例成员和静态成员
+实例成员就是构造函数内部通过this添加的成员，实例成员只能通过实例化的对象来访问 例如 console.log(ldh.uname)
+
+静态成员 在构造函数内部本身上添加的成员，例如 console.log(Star.uname)
+
+### 构造函数原型 prototype
+构造函数通过原型分配的函数是所有对象共享的
+我们也称pro
