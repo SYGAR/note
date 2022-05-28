@@ -19,3 +19,12 @@ constructor里面的this指向实例对象，方法里面的this指向这个方�
 
 ### insertAdjacentHTML
 insertAdjacentHTML() 方法将指定的文本解析为 Element 元素，并将结果节点插入到DOM树中的指定位置。它不会重新解析它正在使用的元素，因此它不会破坏元素内的现有元素。这避免了额外的序列化步骤，使其比直接使用innerHTML操作更快。
+
+### 双击禁止选定文字
+双击的事件是：ondblclick
+window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+
+### 创建对象可以通过以下三种方式
+1.对象字面量
+2.new Object()
+3.自定义构造函数
