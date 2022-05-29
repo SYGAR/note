@@ -111,3 +111,17 @@ arg1,arg2,arg3...：传递的其他参数
 ES6的类其实就是语法糖
 语法糖就是一种便捷写法，简单理解，有两种方法可以实现同样的功能，但是一种写法更加清晰、方便，那么这个方法就是语法糖
 
+### ES5中的新增方法
+数组方法
+迭代（遍历）方法：forEach()、every()、filter()、map()、some()
+array.forEach(function(currentValue,index,array){
+    //currentValue:数组当前的项
+    //index:数组当前项的索引
+    //arr:数组对象本身
+})
+array.filter(function(currentValue,index,arr){
+    //currentValue:数组当前的项
+    //index:数组当前项的索引
+    //arr:数组对象本身
+})
+ps:直接返回一个新数组
