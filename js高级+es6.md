@@ -89,3 +89,9 @@ constructor主要用于记录该对象引用于哪个构造函数，它可以让
 
 ### 利用原型对象拓展内置对象
 注意：数组和字符串内置对象不能给原型对象覆盖操作Array.prototype={}，只能是Array.prototype.xxx=function(){}的方式
+
+### call()
+调用这个函数，并且修改函数运行时的this指向
+fun.call(thisArg,arg1,arg2,arg3,...)
+thisArg：当前调用函数this的指向对象
+arg1,arg2,arg3...：传递的其他参数
