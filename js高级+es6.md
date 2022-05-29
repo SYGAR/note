@@ -124,4 +124,19 @@ array.filter(function(currentValue,index,arr){
     //index:数组当前项的索引
     //arr:数组对象本身
 })
-ps:直接返回一个新数组
+ps:直接返回一个新数组，主要用于筛选数组
+示例：
+``` javascript
+   var arr = [12, 66, 4, 88, 3, 7];
+        var newArr = arr.filter(function(value, index) {
+            // return value >= 20;
+            return value % 2 === 0;
+        });
+        console.log(newArr);
+```
+array.some(function(currentValue,index,arr){
+    //currentValue:数组当前的项
+    //index:数组当前项的索引
+    //arr:数组对象本身
+})
+ps:直接返回一个布尔值，主要用于判断数组中是否有满足条件的项,如果找到第一个满足条件的元素，则终止循环，不在继续查找
