@@ -112,7 +112,7 @@ ES6的类其实就是语法糖
 语法糖就是一种便捷写法，简单理解，有两种方法可以实现同样的功能，但是一种写法更加清晰、方便，那么这个方法就是语法糖
 
 ### ES5中的新增方法
-数组方法
+#### 1.数组方法
 迭代（遍历）方法：forEach()、every()、filter()、map()、some()
 array.forEach(function(currentValue,index,array){
     //currentValue:数组当前的项
@@ -140,3 +140,7 @@ array.some(function(currentValue,index,arr){
     //arr:数组对象本身
 })
 ps:直接返回一个布尔值，主要用于判断数组中是否有满足条件的项,如果找到第一个满足条件的元素，则终止循环，不在继续查找
+在forEach里面return不会终止迭代
+在filter里面return不会终止迭代
+
+#### 2.字符串方法
