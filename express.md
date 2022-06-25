@@ -1,7 +1,9 @@
 官方给出的概念：Express是基于Node.js平台，快速、开放、极简的Web开发框架。
 
 ### 安装
+```js
 npm i express@4.17.1
+```
 
 ### 监听GET请求
 ```js
@@ -43,4 +45,39 @@ app.get('/user/:ids/:username', (req, res) => {
   console.log(req.params)
   res.send(req.params)
 })
+```
+
+### 托管静态资源
+1.express.static()
+通过以下的代码就可以将public目录下的图片、css文件、JacaScript文件对外开放访问了
+```js
+app.use(express.static('public'))
+```
+<mark>注意：Express在指定的静态目录中查找文件，并对外提供资源的访问路径。因此，存放静态文件的目录名不会出现在URL中，比如上面的public不hi出现在URL中</mark>
+
+### 托管多个静态资源目录
+```js
+app.use(express.static('public'))
+app.use(express.static('files'))
+```
+访问静态资源文件时，express.static()函数会根据目录的添加顺序查找所需的文件。
+
+### 挂载路径前缀
+如果希望在托管的静态资源访问路径之前，挂载路径前缀，则可以使用如下的方式：
+```js
+app.use('./public',express.static('public'))
+```
+
+### nodemon
+#### 能够监听项目文件的变动，当代码被修改后，nodemon会自动帮我们重启项目，极大方便了开发和调试。
+
+#### 安装nodemon
+在终端中，运行如下命令，即可将nodemon安装为全局可用的工具：
+```js
+npm install -g nodemon
+```
+#### 使用nodemon
+传统是node app.js
+```js
+nodemon app.js
 ```
