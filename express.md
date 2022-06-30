@@ -112,3 +112,57 @@ app.use('/api',router)
 Express的中间件，本质上就是一个function处理函数。
 注意：中间件函数的形参列表中，必须包含next参数。而路由处理函数中只包含req和res。
 next函数是实现多个中间件连续调用的关键，它表示把流转关系转交给下一个中间件或路由。
+
+#### 定义中间件函数
+```js
+const mw = function(req,res,next){
+    next()
+}
+```
+
+#### 全局生效的中间件
+```js
+const mw = function(req,res,next){
+    next()
+}
+app.use(mw)
+```
+
+#### 定义全局中间件的简化形式
+
+```js
+app.use(function(req,res,next){
+    next()
+})
+```
+
+#### 中间件的作用
+多个中间件之间，共享同一份req和res。可以在上游的中间件中，统一为req或res对象添加自定义的属性或方法，供下游的中间件或路由进行使用。
+
+#### 定义多个全局中间件
+可以用app.use()连续定义多个全局中间件。客户端请求到达服务器之后，会按照中间件定义的先后顺序依次进行调用。
+
+#### 局部生效的中间件
+不使用app.use()定义的中间件，叫做局部生效的中间件。
+```js
+app.get('/',mw1,function(req,res,next){
+    next()
+})
+```
+
+### 定义多个局部中间件
+```js
+app.get('/',mw1,mw2,function(req,res,next){
+    next()
+})
+app.get('/',[nw1,nw2],function(req,res,next){
+    next()
+})
+```
+
+### 中间件的5个使用注意事项
+1.一定要在路由之前注册中间件
+2.客户端发送过来的请求，可以连续调用多个中间件进行处理
+3.执行完中间件的业务代码之后，不要忘记调用next()函数
+4.防止代码逻辑混乱，调用next()函数之后不要再写额外的代码
+5.连续调用多个中间件之后，多个中间件之间，共享req和res对象
