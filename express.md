@@ -181,10 +181,57 @@ app.get('/',[nw1,nw2],function(req,res,next){
 ```
 1.应用级别的中间件
 通过app.use()或app.get()或app.post(),绑定到app实例上的中间件，叫做应用级别的中间件。
+```
+```
 2.路由级别的中间件
 绑定到express.Router()实例上的中间件
 ps:应用级别中间件是绑定到app实例上，路由级别中间件绑定到router实例上
-3.错误级别的中间件
-4.Express内置的中间件
-5.第三方的中间件
 ```
+```
+3.错误级别的中间件
+专门用来捕获整个项目中发生的异常错误，从而防止项目异常崩溃的问题。
+格式：app.use(function(err,req,res,next){
+    // do something
+})
+注意：错误级别的中间件，必须注册在所有路由之后.
+```
+```
+4.Express内置的中间件
+1.express.static()：用来处理静态资源的中间件，可以处理静态资源，如图片、css、js等。（无兼容性）
+2.express.json()：用来解析请求体中的json数据，并将其转换成对象。（有兼容性）
+3.express.urlencoded()：用来解析请求体中的x-www-form-urlencoded数据，并将其转换成对象。（有兼容性）
+```
+```
+5.第三方的中间件
+非Express官方内置的
+使用步骤：
+1.运行npm install body-parser安装中间件
+2.使用require导入中间件
+3.调用app.use()注册并使用中间件
+```
+
+### 基于cors解决跨域问题
+```
+解决接口跨域问题的方案主要有两种：
+1.CORS（主流的解决方案，推荐使用）
+2.JSONP（有缺陷的解决方案，只支持GET请求）
+```
+
+#### 使用步骤
+cors是Express的一个第三方中间件。通过安装和配置cors中间件
+```
+1.运行npm install cors安装中间件
+2.使用const cors = require('cors')导入中间件
+3.在路由之前调用app.use(cors())配置中间件
+```
+
+#### cors
+```
+CORS（Cross-Origin Resource Sharing，跨域资源共享）由一系列HTTP响应头组成，这些HTTP响应头决定浏览器是否阻止前端JS代码跨域获取资源。
+浏览器的同源安全策略默认会阻止网页“跨域”获取资源。但如果接口服务器配置了CORS相关的HTTP响应头，就可以解除浏览器端的跨域访问限制。
+```
+
+#### cors的注意事项
+```
+1.CORS主要在服务器端进行配置，客户端浏览器无须做任何额外的配置，即可请求开启了CORS的接口。
+2.CORS在浏览器中有兼容性，只有支持XMLHttpRequest Level2的浏览器,才能正常访问开启了CORS的服务端接口（例如：IE10+,Chrom4+,FireFox3.5+)。
